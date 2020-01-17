@@ -19,10 +19,13 @@ export default class App extends Component  {
   render() {
     console.log(this.state.users.results)
     return (
-      <div>hello</div>
-     
-    )
+      null
+      // {this.state.results.map((users, index) => (
+      //   <div>
+
+      //   </div>
+      )
   }
 }
-
+  
 
