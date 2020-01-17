@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 // import Contacts from './Components/Contacts'
 
-class App extends Component  {
+export default class App extends Component  {
   state = {
   users : []
   };
@@ -19,17 +19,10 @@ class App extends Component  {
   render() {
     console.log(this.state.users.results)
     return (
-      <div>
-      {this.state.users.data.map((users, index) => (
-        <div>
-          Title:{users.title}<br/>
-          Author:{users.author}</div>
-      ))}
-      </div>
+      <div>hello</div>
+     
     )
   }
 }
 
-
-export default App;
 
