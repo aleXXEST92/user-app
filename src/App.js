@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Contacts from './Components/Contacts'
+// import Contacts from './Components/Contacts'
 
 class App extends Component  {
   state = {
@@ -20,17 +20,13 @@ class App extends Component  {
     console.log(this.state.users.results)
     return (
       <div>
-        hello
+      {this.state.users.data.map((users, index) => (
+        <div>
+          Title:{users.title}<br/>
+          Author:{users.author}</div>
+      ))}
       </div>
     )
-    // return (
-    //   <div className="App">
-    //     {this.state.users.data.results.map((user, index) => (
-    //     <Contacts        
-    //     />
-    //     ))}
-    //   </div>
-    // );
   }
 }
 
