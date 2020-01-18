@@ -1,15 +1,15 @@
 import React, {Component} from 'react';
-// import Contacts from './Components/Contacts'
+import Contacts from './Components/Contacts'
 
 export default class App extends Component  {
   state = {
-  users : []
+  contacts : [],
   };
 
   getUsers = () => {
     fetch("https://randomuser.me/api?results=25")
     .then(response => response.json())
-    .then(data => this.setState({users : data}));
+    .then(data => this.setState({contacts : data.results}));
   }
 
   componentDidMount() {
@@ -17,14 +17,19 @@ export default class App extends Component  {
   }
 
   render() {
-    console.log(this.state.users.results)
-    return (
-      null
-      // {this.state.results.map((users, index) => (
-      //   <div>
+    console.log(this.state.contacts)
 
-      //   </div>
-      )
+    return (
+      <div>
+      {this.state.contacts.map((person, index) => (
+        <Contacts
+        key={person.registered.date}
+        contacts ={person}
+
+        />
+      ))}
+      </div>
+    )
   }
 }
   
