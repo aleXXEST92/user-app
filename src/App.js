@@ -25,7 +25,6 @@ export default class App extends Component  {
         <Contacts
         key={person.registered.date}
         contacts ={person}
-
         />
       ))}
       </div>
