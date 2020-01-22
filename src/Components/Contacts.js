@@ -5,31 +5,35 @@ import HideInfo from "./HideInfo"
 export default class Contacts extends Component {
 
 state ={
-    isClicked: false 
+    isMoreInfo: false 
 }
 
 handleClick = () => {
 
-let isClicked = this.state.isClicked
+let isMoreInfo = this.state.isMoreInfo
 
-console.log(isClicked)
+console.log(isMoreInfo)
 
 this.setState({
-   isClicked: !isClicked 
+   isMoreInfo: !isMoreInfo 
 })
 } 
 
     render() {
 
-        let isClicked = this.state.isClicked
+        let isMoreInfo = this.state.isMoreInfo
         const contacts = this.props.contacts
 
         return (
-            <div>
-            First Name:{contacts.name.first}<br/>
-            Last Name:{contacts.name.last}<br/>
+            <div className='individual'>
+            Name:{contacts.name.first} {contacts.name.last}<br/>
             <img alt ="thumbnail" src={contacts.picture.large}></img><br/>
-            {isClicked ? (<ShowInfo handleClick={this.handleClick}/>) : (<HideInfo handleClick={this.handleClick}/>)}
+            {isMoreInfo ? (<HideInfo 
+            contacts ={contacts}
+            handleClick={this.handleClick}/>) 
+            : (<ShowInfo 
+            contacts ={contacts}
+            handleClick={this.handleClick}/>)}
             </div>
         )
     }

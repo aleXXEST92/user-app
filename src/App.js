@@ -21,12 +21,15 @@ export default class App extends Component  {
 
     return (
       <div>
+      <h1>My Contacts</h1>
+      <div className='main'>
       {this.state.contacts.map((person, index) => (
         <Contacts
         key={person.registered.date}
         contacts ={person}
         />
       ))}
+      </div>
       </div>
     )
   }
