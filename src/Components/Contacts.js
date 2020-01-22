@@ -26,7 +26,7 @@ this.setState({
 
         return (
             <div className='individual'>
-            Name:{contacts.name.first} {contacts.name.last}<br/>
+            Name:<br/>{contacts.name.first} {contacts.name.last}<br/>
             <img alt ="thumbnail" src={contacts.picture.large}></img><br/>
             {isMoreInfo ? (<HideInfo 
             contacts ={contacts}
